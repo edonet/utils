@@ -1,0 +1,24 @@
+{
+  "name": "edonet-utils",
+  "version": "1.0.0",
+  "description": "javascript utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edonet/utils.git"
+  },
+  "keywords": [
+    "javascript",
+    "utils",
+    "edonet"
+  ],
+  "author": "lifx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edonet/utils/issues"
+  },
+  "homepage": "https://github.com/edonet/utils#readme"
+}
