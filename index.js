@@ -217,7 +217,7 @@ exports.setPrivateProperty = function(object, property, value){
 };
 
 // 创建对象
-exports.create = Object.create || (function() {
+var create = Object.create || (function() {
     var hasOwn = Object.prototype.hasOwnProperty;
 
     function noop() {}
@@ -243,47 +243,25 @@ exports.create = Object.create || (function() {
         return obj;
     };
 })();
+exports.create = create;
 
 // 定义类函数
-function inherit(){
-    var result = {},
-        inheritClassList = filter(arguments, function(i, v){
-            if(isFunction(v))
-                return inheritCopy(result, v.prototype);
+function inherit(superClass, props){
+    var result = {};
 
-            if(isObject(v))
-                inheritCopy(result, v);
+    if(isFunction(superClass)){
+        result = create(superClass.prototype, props);
+        result.initSuper = function(){
+            superClass.apply(this, arguments);
+        };
 
-            return false;
-        });
+        return result;
+    }else if(isObject(superClass)){
+        result = create(superClass, props);
+    }
 
-    result.initSuper = function(){
-        var self = this,
-            argus = arguments;
-
-        each(inheritClassList, function(i, fn){
-            fn.apply(self, argus);
-        });
-    };
-
+    result.superClass = function(){};
     return result;
-}
-
-function inheritCopy(target, origin){
-    var noop = function(){};
-
-    each(origin, function(k, v){
-        if(isObject(v)){
-            noop.prototype = v;
-            target[k] = new noop();
-            noop.prototype = null;
-        }else if(isArray(v)){
-            target[k] = v.slice(0);
-        }else {
-            target[k] = v;
-        }
-    });
-    return target;
 }
 
 exports.inherit = inherit;
