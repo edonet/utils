@@ -247,20 +247,27 @@ exports.create = create;
 
 // 定义类函数
 function inherit(superClass, props){
-    var result = {};
+    var result,
+        key;
 
     if(isFunction(superClass)){
-        result = create(superClass.prototype, props);
+        result = create(superClass.prototype);
         result.initSuper = function(){
             superClass.apply(this, arguments);
         };
-
-        return result;
-    }else if(isObject(superClass)){
-        result = create(superClass, props);
+    }else{
+        result = isObject(superClass) ? create(superClass) : {};
+        result.initSuper = function(){};
     }
 
-    result.superClass = function(){};
+    if(isObject(props)){
+        for(key in props){
+            if(props.hasOwnProperty(key)){
+                result[key] = props[key];
+            }
+        }
+    }
+
     return result;
 }
 
