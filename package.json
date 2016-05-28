@@ -1,6 +1,6 @@
 {
   "name": "edonet-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "javascript utils",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/edonet/utils/issues"
   },
-  "homepage": "https://github.com/edonet/utils#readme"
+  "homepage": "https://github.com/edonet/utils#readme",
+  "devDependencies": {
+    "webpack-module-exports": "^1.0.1"
+  }
 }
