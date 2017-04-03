@@ -18,5 +18,5 @@ module.exports = {
     isArray: argv => Array.isArray(argv),
     isObject: argv => argv && typeof argv === 'object' && !Array.isArray(argv),
     isIterator: argv => argv && typeof argv === 'object' && Symbol.iterator in argv,
-    isAsyncFunction: argv => Object.prototype.toString.call(argv) === '[object AsyncFunction]'
+    isAsyncFunction: argv => toStr.call(argv) === '[object AsyncFunction]'
 };

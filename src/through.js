@@ -8,7 +8,7 @@
  */
 const
     stream = require('stream'),
-    thunkify = require('./thunkify');
+    defer = require('./defer');
 
 
 /**
@@ -20,7 +20,7 @@ class Through extends stream.Transform {
     constructor(handler) {
         super();
 
-        this.handler = thunkify(handler);
+        this.handler = defer(handler);
         this._readableState.objectMode = false;
         this._writableState.objectMode = true;
     }

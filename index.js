@@ -9,8 +9,7 @@
 const
     utils = require('./src/utils'),
     methods = [
-        'argv',
-        'thunkify',
+        'argv', 'exec', 'defer', 'thunkify',
         'stat', 'rmdir', 'mkdir', 'copy', 'symlink',
         'through', 'transfer'
     ];
