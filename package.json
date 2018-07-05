@@ -1,7 +1,7 @@
 {
-  "name": "utils",
-  "version": "0.1.0",
-  "description": "nodejs utils",
+  "name": "@arted/utils",
+  "version": "0.0.1",
+  "description": "utils for nodejs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +12,7 @@
   },
   "keywords": [
     "nodejs",
-    "utils",
-    "edonet"
+    "utils"
   ],
   "author": "lifx",
   "license": "ISC",
