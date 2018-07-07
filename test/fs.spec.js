@@ -13,7 +13,7 @@
  *****************************************
  */
 import fs from '../lib/fs';
-import path from 'path';
+import path from '../lib/path';
 
 
 /**
@@ -121,5 +121,41 @@ describe('测试【fs】模块', () => {
         // 校验结果
         expect(await fs.stat('./a')).toBeNull();
         expect(await fs.stat('./a.cp')).toBeNull();
+    });
+
+    /* 解析模块 */
+    test('解析模块', async () => {
+        let data = fs.resolve('./package.json');
+
+        // 校验结果
+        expect(data.author).toBe('lifx');
+
+        // 创建临时文件
+        await fs.writeFile('./a.js', 'let a = 1; a ++; module.exports = { a };');
+
+        // 解析模块
+        data = fs.resolve('./a.js', { b: 3 });
+
+        // 校验结果
+        expect(data.a).toBe(2);
+        expect(data.b).toBe(3);
+
+        // 移除临时文件
+        await fs.rmdir('./a.js');
+
+        // 解析模块
+        data = fs.resolve('./b.js', { b: 3 });
+
+        // 校验结果
+        expect(await fs.stat('./a.js')).toBeNull();
+        expect(await fs.stat('./b.js')).toBeNull();
+        expect(data.a).toBeUndefined();
+        expect(data.b).toBe(3);
+
+        // 解析模块
+        data = fs.resolve('./c.js');
+
+        // 校验结果
+        expect(data).toBeNull();
     });
 });
