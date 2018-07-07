@@ -158,4 +158,17 @@ describe('测试【fs】模块', () => {
         // 校验结果
         expect(data).toBeNull();
     });
+
+    /* 搜索文件 */
+    test('搜索文件', async () => {
+        let cb = jest.fn(),
+            files = await fs.search('**/*.spec.js', cb);
+
+        // 补全路径
+        files = files.map(file => path.cwd(file));
+
+        // 校验结果
+        expect(files.length).toBeGreaterThan(1);
+        expect(files).toEqual(expect.arrayContaining([__filename]));
+    });
 });
