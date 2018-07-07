@@ -162,7 +162,7 @@ describe('测试【fs】模块', () => {
     /* 搜索文件 */
     test('搜索文件', async () => {
         let cb = jest.fn(),
-            files = await fs.search('**/*.spec.js', cb);
+            files = await fs.glob('**/*.spec.js', cb);
 
         // 补全路径
         files = files.map(file => path.cwd(file));
