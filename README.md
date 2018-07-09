@@ -18,5 +18,7 @@ $ yarn global add @arted/utils
 const fs = '@arted/utils/fs';
 
 // 获取文件状态
-fs.stat('path/to/file.json').then(stats => console.log(stats));
+async function getStats() {
+    return await fs.stat('path/to/file.json');
+}
 ```

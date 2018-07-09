@@ -1,23 +1,27 @@
 {
-  "name": "@arted/utils",
-  "version": "0.0.1",
-  "description": "utils for nodejs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edonet/utils.git"
-  },
-  "keywords": [
-    "nodejs",
-    "utils"
-  ],
-  "author": "lifx",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/edonet/utils/issues"
-  },
-  "homepage": "https://github.com/edonet/utils#readme"
+    "name": "@arted/utils",
+    "version": "0.0.101",
+    "description": "utils for nodejs",
+    "main": "index.js",
+    "lib": "./lib",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/edonet/utils.git"
+    },
+    "keywords": [
+        "nodejs",
+        "utils"
+    ],
+    "author": "lifx",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/edonet/utils/issues"
+    },
+    "homepage": "https://github.com/edonet/utils#readme",
+    "dependencies": {
+        "xml2js": "^0.4.19"
+    }
 }
