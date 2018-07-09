@@ -22,6 +22,7 @@
     },
     "homepage": "https://github.com/edonet/utils#readme",
     "dependencies": {
-        "xml2js": "^0.4.19"
+        "xml2js": "^0.4.19",
+        "glob": "^7.1.2"
     }
 }
