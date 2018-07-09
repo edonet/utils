@@ -3,9 +3,10 @@
     "version": "0.0.101",
     "description": "utils for nodejs",
     "main": "index.js",
-    "lib": "./lib",
+    "lib": "./build",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest",
+        "prepublish": "cp -r ./lib ./build"
     },
     "repository": {
         "type": "git",
