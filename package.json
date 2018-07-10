@@ -5,8 +5,8 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "build": "drap lib build",
-        "dist": "yarn build && cd build && yarn publish"
+        "drap": "drap lib build",
+        "build": "yarn drap && cd build && yarn publish"
     },
     "repository": {
         "type": "git",
