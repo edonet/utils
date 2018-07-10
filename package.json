@@ -1,12 +1,12 @@
 {
     "name": "@arted/utils",
-    "version": "0.0.101",
+    "version": "0.0.104",
     "description": "utils for nodejs",
     "main": "index.js",
-    "lib": "./build",
     "scripts": {
         "test": "jest",
-        "prepublish": "cp -r ./lib ./build"
+        "build": "drap lib build",
+        "dist": "yarn build && cd build && yarn publish"
     },
     "repository": {
         "type": "git",
@@ -23,7 +23,7 @@
     },
     "homepage": "https://github.com/edonet/utils#readme",
     "dependencies": {
-        "xml2js": "^0.4.19",
-        "glob": "^7.1.2"
+        "glob": "^7.1.2",
+        "xml2js": "^0.4.19"
     }
 }
