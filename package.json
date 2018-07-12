@@ -23,8 +23,10 @@
     },
     "homepage": "https://github.com/edonet/utils#readme",
     "dependencies": {
+        "archiver": "^2.1.1",
         "babel-runtime": "^6.26.0",
         "glob": "^7.1.2",
+        "unzip": "^0.1.11",
         "xml2js": "^0.4.19"
     }
 }
