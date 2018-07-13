@@ -44,5 +44,11 @@ describe('测试【validate】', () => {
         validate(4, []);
         validate(5, {});
         validate(6, /1/);
+
+        // 校验多类型
+        expect($.default(1, 'string', 'array', 'number')).toBe('number');
+        expect($.default('1', 'string', 'array', 'number')).toBe('string');
+        expect($.default([1], 'string', 'array', 'number')).toBe('array');
+        expect($.default(true, 'string', 'array', 'number')).toBe(false);
     });
 });

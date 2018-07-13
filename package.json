@@ -1,8 +1,12 @@
 {
     "name": "@arted/utils",
-    "version": "0.0.107",
+    "version": "0.0.108",
     "description": "utils for nodejs",
     "main": "index.js",
+    "bin": {
+        "dzip": "./bin/zip.js",
+        "undzip": "./bin/unzip.js"
+    },
     "scripts": {
         "test": "jest",
         "drap": "drap lib build",
@@ -27,6 +31,7 @@
         "babel-runtime": "^6.26.0",
         "glob": "^7.1.2",
         "unzip": "^0.1.11",
-        "xml2js": "^0.4.19"
+        "xml2js": "^0.4.19",
+        "yargs": "^12.0.1"
     }
 }
