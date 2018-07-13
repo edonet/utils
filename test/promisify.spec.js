@@ -23,8 +23,8 @@ import promisify from '../lib/promisify';
  */
 describe('测试【promisfy】', () => {
 
-    /* 扩展【fs】 */
-    test('扩展【fs】', async () => {
+    /* 同步回调 */
+    test('同步回调', async () => {
         let cb = jest.fn(),
             readFile = promisify(fs.readFile),
             code = await readFile(__filename, cb);
