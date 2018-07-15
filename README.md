@@ -5,12 +5,12 @@ Utils for Javascript/Nodejs
 ## Installation
 npm
 ``` shell
-$ npm install -g @arted/utils
+$ npm install @arted/utils
 ```
 
 or yarn
 ``` shell
-$ yarn global add @arted/utils
+$ yarn add @arted/utils
 ```
 
 ## Usage

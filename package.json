@@ -1,6 +1,6 @@
 {
     "name": "@arted/utils",
-    "version": "0.0.110",
+    "version": "0.0.111",
     "description": "utils for nodejs",
     "main": "index.js",
     "scripts": {
