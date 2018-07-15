@@ -3,10 +3,6 @@
     "version": "0.0.110",
     "description": "utils for nodejs",
     "main": "index.js",
-    "bin": {
-        "dzip": "./bin/zip.js",
-        "undzip": "./bin/unzip.js"
-    },
     "scripts": {
         "test": "jest",
         "drap": "drap lib build",
