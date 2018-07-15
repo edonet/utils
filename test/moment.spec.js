@@ -44,6 +44,7 @@ describe('测试【moment】', () => {
         expect(format.e(date)).toBe('th');
 
         // 校验星期信息
+        expect(format.L(date)).toBe('星期日');
         expect(format.l(date)).toBe('Sunday');
         expect(format.D(date)).toBe('Sun');
         expect(format.N(date)).toBe(7);
@@ -94,5 +95,6 @@ describe('测试【moment】', () => {
         expect(date.parse('6:30:5').toString('H/i/s')).toBe('06/30/05');
         expect(date.parse('6:30:5 pm').toString('H/i/s')).toBe('18/30/05');
         expect(date.parse('2018/2/25T6:30:5 pm').toString('Ymd/H/i/s')).toBe('20180225/18/30/05');
+        expect(date.parse('2018/2/25T6:30:5.007Z').toString('Ymd/H/i/s/u')).toBe('20180225/06/30/05/007');
     });
 });
