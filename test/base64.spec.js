@@ -26,7 +26,7 @@ describe('测试【base64】', () => {
         expect(encode(decode('5Lit5Zu9'))).toBe('5Lit5Zu9');
         expect(encode('中国人')).toBe('5Lit5Zu95Lq6');
         expect(decode('5Lit5Zu95Lq6')).toBe('中国人');
-        expect(encode('中国人')).toBe(new Buffer('中国人').toString('base64'));
-        expect(decode('5Lit5Zu95Lq6')).toBe(new Buffer('5Lit5Zu95Lq6', 'base64').toString());
+        expect(encode('中国人')).toBe(Buffer.from('中国人').toString('base64'));
+        expect(decode('5Lit5Zu95Lq6')).toBe(Buffer.from('5Lit5Zu95Lq6', 'base64').toString());
     });
 });
