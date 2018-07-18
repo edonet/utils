@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import EventEmitter from '../lib/event';
+import EventEmitter from '../lib/events';
 
 
 /**
