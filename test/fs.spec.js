@@ -157,6 +157,27 @@ describe('测试【fs】模块', () => {
 
         // 校验结果
         expect(data).toBeNull();
+
+        // 创建临时文件
+        await fs.writeFile('./d.js', 'let a = 1; a ++; module.exports = [a];');
+        await fs.writeFile('./e.js', 'let a = 1; a ++; module.exports = a;');
+        await fs.writeFile('./f.js', 'let a = 1; a ++; module.exports = a + "";');
+        await fs.writeFile('./g.js', 'let a = 1; a ++; module.exports = !!a;');
+        await fs.writeFile('./h.js', 'let a = 1; a ++;');
+
+        // 校验结果
+        expect(fs.resolve('./d.js')).toEqual([2]);
+        expect(fs.resolve('./e.js')).toEqual(2);
+        expect(fs.resolve('./f.js')).toEqual('2');
+        expect(fs.resolve('./g.js')).toEqual(true);
+        expect(fs.resolve('./h.js')).toEqual({});
+
+        // 移除临时文件
+        await fs.rmdir('./d.js');
+        await fs.rmdir('./e.js');
+        await fs.rmdir('./f.js');
+        await fs.rmdir('./g.js');
+        await fs.rmdir('./h.js');
     });
 
     /* 搜索文件 */
