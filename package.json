@@ -1,12 +1,12 @@
 {
     "name": "@arted/utils",
-    "version": "0.0.114",
+    "version": "0.0.116",
     "description": "utils for nodejs",
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "drap": "drap lib build",
-        "build": "yarn drap && cd build && yarn publish"
+        "build": "drap lib build",
+        "release": "yarn build && cd build && yarn publish"
     },
     "repository": {
         "type": "git",
@@ -24,7 +24,9 @@
     "homepage": "https://github.com/edonet/utils#readme",
     "dependencies": {
         "archiver": "^2.1.1",
-        "babel-runtime": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "glob": "^7.1.2",
         "unzip": "^0.1.11",
         "xml2js": "^0.4.19",
