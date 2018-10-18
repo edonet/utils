@@ -30,7 +30,6 @@ describe('测试【uuid】', () => {
             let id = uuid();
 
             // 校验不存在当前【id】
-            expect(id > 0).toBeTruthy();
             expect(map[id]).toBeUndefined();
 
             // 添加【id】
