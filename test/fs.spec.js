@@ -1,6 +1,6 @@
 /**
  *****************************************
- * Created by lifx
+ * Created by edonet@163.com
  * Created on 2018-07-05 15:11:11
  *****************************************
  */
@@ -128,7 +128,7 @@ describe('测试【fs】模块', () => {
         let data = fs.resolve('./package.json');
 
         // 校验结果
-        expect(data.author).toBe('lifx');
+        expect(data.author).toBe('edonet@163.com');
 
         // 创建临时文件
         await fs.writeFile('./a.js', 'let a = 1; a ++; module.exports = { a };');

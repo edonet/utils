@@ -1,6 +1,6 @@
 {
     "name": "@arted/utils",
-    "version": "0.0.116",
+    "version": "0.0.117",
     "description": "utils for nodejs",
     "main": "index.js",
     "scripts": {
@@ -16,7 +16,7 @@
         "nodejs",
         "utils"
     ],
-    "author": "lifx",
+    "author": "edonet@163.com",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/edonet/utils/issues"
