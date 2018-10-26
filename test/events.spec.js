@@ -12,7 +12,7 @@
  * 加载模块
  *****************************************
  */
-import EventEmitter from '../lib/events';
+import EventEmitter, { createEvent } from '../lib/events';
 
 
 /**
@@ -21,6 +21,8 @@ import EventEmitter from '../lib/events';
  *****************************************
  */
 describe('测试【event】', () => {
+
+    /* 监听事件 */
     test('监听事件', () => {
         let cb1 = jest.fn(),
             cb2 = jest.fn(),
@@ -68,5 +70,25 @@ describe('测试【event】', () => {
         expect(cb2.mock.calls).toHaveLength(3);
         expect(cb3.mock.calls).toHaveLength(1);
         expect(cb2.mock.calls[2]).toEqual([6]);
+    });
+
+    /* 派发事件 */
+    test('派发事件', () => {
+        let cb1 = jest.fn(event => event.preventDefault()),
+            cb2 = jest.fn(event => expect(event.defaultPrevented).toBe(true)),
+            cb3 = event => event.preventDefault(),
+            event = createEvent(),
+            eventEmiter = new EventEmitter();
+
+        // 添加事件
+        eventEmiter.on('cb1', cb1);
+        eventEmiter.on('cb1', cb2);
+
+        // 执行事件
+        cb3(event);
+
+        // 检验结果
+        expect(eventEmiter.dispatch('cb1')).toBe(false);
+        expect(event.defaultPrevented).toBe(true);
     });
 });
