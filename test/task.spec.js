@@ -31,8 +31,8 @@ describe('测试【task】', () => {
         tasked.add(() => count += 3);
 
         // 校验结果
-        expect(tasked.length).toBe(3);
-        expect(tasked.resolve().length).toBe(0);
+        expect(tasked).toHaveLength(3);
+        expect(tasked.resolve()).toHaveLength(0);
         expect(count).toBe(6);
 
         // 添加任务
@@ -41,16 +41,16 @@ describe('测试【task】', () => {
         tasked.add(argv => count += 3 * argv);
 
         // 校验结果
-        expect(tasked.length).toBe(3);
-        expect(tasked.resolve(3).length).toBe(0);
+        expect(tasked).toHaveLength(3);
+        expect(tasked.resolve(3)).toHaveLength(0);
         expect(count).toBe(24);
 
         // 添加任务
         tasked.add(argv => count += 1 * argv);
 
         // 校验结果
-        expect(tasked.length).toBe(1);
-        expect(tasked.clear().length).toBe(0);
+        expect(tasked).toHaveLength(1);
+        expect(tasked.clear()).toHaveLength(0);
 
         // 解析结果
         tasked.resolve(2);
