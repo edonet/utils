@@ -12,7 +12,7 @@
  * 加载依赖
  *****************************************
  */
-import is from '../lib/is';
+import is, * as api from '../lib/is';
 
 
 /**
@@ -31,7 +31,7 @@ describe('测试【is】', () => {
 
                 // 校验判断接口
                 calls.forEach((fn, idx) => {
-                    expect(is[fn](value)).toBe(idx === matched);
+                    expect(api[fn](value)).toBe(idx === matched);
                     expect(is(value, types[idx])).toBe(idx === matched);
                 });
             };

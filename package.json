@@ -1,12 +1,11 @@
 {
     "name": "@arted/utils",
-    "version": "0.0.129",
+    "version": "0.0.130",
     "description": "utils for nodejs",
     "main": "index.js",
     "scripts": {
-        "test": "jest",
         "build": "drap lib dist",
-        "release": "cd dist && yarn publish"
+        "release": "yarn build && cd dist && yarn publish"
     },
     "repository": {
         "type": "git",
